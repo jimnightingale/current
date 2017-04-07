@@ -13,6 +13,8 @@ sudo chmod 777 /var/lib/redis
 
 sudo adduser --system --user-group --no-create-home redis
 
+
+#sudo scp $USR@srv:/etc/redis/redis.conf /etc/redis/
 sudo sshpass -p '$PASSWD' scp $USR@srv:/etc/redis/redis.conf /etc/redis/
 sudo sshpass -p '$PASSWD' scp $USR@srv:/etc/systemd/system/redis.service /etc/systemd/system/
 sudo sshpass -p '$PASSWD' scp $USR@srv:/usr/local/bin/redis-benchmark /usr/local/bin/
