@@ -31,7 +31,8 @@ echo ** edit bind address in /etc/redis/redis.conf
 # redis conf
 ## bind
 ## slaveof masterip masterport
-## slave-serve-stale-data no
+## slave-serve-stale-data no #if master is down then no data is served
+## slave-serve-stale-data yes
 ## slave-read-only yes
 ## repl-diskless-sync no
 ## repl-disable-tcp-nodelay no
