@@ -8,6 +8,7 @@ sudo yum install -y sshpass
 
 sudo mkdir -p /etc/redis
 sudo mkdir /var/lib/redis
+sudo chmod 777 /var/lib/redis
 
 
 sudo adduser --system --user-group --no-create-home redis
@@ -31,3 +32,4 @@ echo ** edit bind address in /etc/redis/redis.conf
 ## slave-serve-stale-data no
 ## slave-read-only yes
 ## repl-diskless-sync no
+## repl-disable-tcp-nodelay no
