@@ -1,12 +1,6 @@
 #!/bin/bash
 
-if [ "$(id -u)" -ne "0" ]; then
-    echo "Run As root"
-    exit 1
-fi
-
 #cd ~
-
 name="centos7base"
 version="0.4"
 install_groups="Core"
@@ -19,8 +13,15 @@ outdir="/tmp/src/containers"
 tmpfs="${outdir}/${name}/${version}"
 yum_conf=/etc/yum.conf
 
+
+if [ "$(id -u)" -ne "0" ]; then
+    echo "Run As root"
+    exit 1
+fi
+
 ##!! Subscribe to correct repo
 # we'll assume we are on centos and have the base repo configured
+
 
 mkdir -p ${tmpfs}
 
