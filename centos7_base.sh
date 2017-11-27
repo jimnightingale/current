@@ -1,6 +1,11 @@
 #!/bin/bash
 
-cd ~
+if [ "$(id -u)" -ne "0" ]; then
+    echo "Run As root"
+    exit 1
+fi
+
+#cd ~
 
 name="centos7base"
 version="0.4"
